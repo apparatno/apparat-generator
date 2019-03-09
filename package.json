@@ -19,7 +19,8 @@
     "build": "npm run eslint && rm -rf public/ && babel src --out-dir public && npm run copy-data",
     "copy-data": "copyfiles -u 2 src/generator/data/nounlist.txt public/generator",
     "deploy": "npm run build && git push heroku master && heroku logs --tail",
-    "serve": "cross-env NODE_ENV=production node public/app/main.js"
+    "serve": "cross-env NODE_ENV=production node public/app/main.js",
+    "postinstall": "npm run build"
   },
   "author": "Eirik Årdal",
   "license": "MIT",
