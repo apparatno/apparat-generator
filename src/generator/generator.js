@@ -4,8 +4,13 @@ import translate from 'google-translate-api';
 import { getRandomInt } from '../utils/randomUtil';
 
 const translateNoun = async (noun) => {
-  const res = await translate(noun, { to: 'no' });
-  return res.text;
+  try {
+    const res = await translate(noun, { to: 'no' });
+    return res.text;
+  } catch (error) {
+    console.log('translate err', error);
+    throw error;
+  }
 };
 
 const getRandomNoun = () => {
