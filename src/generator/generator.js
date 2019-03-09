@@ -19,7 +19,6 @@ const getRandomNoun = () => {
   const nounlistPath = path.resolve(__dirname, 'data', 'nounlist.txt');
   console.log('nounlistPath', nounlistPath);
   const nounsAsString = fs.readFileSync(nounlistPath, { encoding: 'UTF-8' });
-  console.log('nounsAsString', nounsAsString);
   const nouns = nounsAsString.split('\n');
   const randomIndex = getRandomInt(0, nouns.length - 1);
   const n = nouns[randomIndex];
