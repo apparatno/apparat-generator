@@ -9,7 +9,8 @@ const translateNoun = async (noun) => {
     const res = await translate(noun, { to: 'no' });
     return res.text;
   } catch (error) {
-    console.log('translate err', error);
+    console.log('translate err', JSON.stringify(error, null, 2));
+    console.log('translate err 2', error.toString());
     throw error;
   }
 };
